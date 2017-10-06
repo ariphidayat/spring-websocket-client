@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+group = 'com.arip.websocket'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework:spring-websocket:4.3.11.RELEASE')
+    compile('org.springframework:spring-messaging:4.3.11.RELEASE')
+    compile('org.glassfish.tyrus.bundles:tyrus-standalone-client:1.13.1')
+    compile('com.fasterxml.jackson.core:jackson-databind:2.9.1')
+}
