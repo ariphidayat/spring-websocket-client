@@ -5,6 +5,19 @@ version = '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+//Create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes  'Main-Class': 'com.arip.websocket.Application'
+    }
+    baseName = 'chat'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    } with jar
+}
+
 repositories {
     mavenCentral()
 }
